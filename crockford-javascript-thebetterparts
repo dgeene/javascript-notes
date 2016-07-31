@@ -1,0 +1,66 @@
+Douglas Crockford – “The Better Parts” | .concat() 2015 
+
+
+11:00 tail calls
+Let
+Destructuring
+WeakMap
+
+17:38 fat arrow functions
+18:10 class -- bad
+19.00  object.create - crockford doesn't use it anymore because he stopped using this
+19:30 - stop using 'this'
+21:40 - do not use null
+23:05 stop using c style for loops. use. array.forEach
+	for objects  Object.keys(object).forEach
+	Object.keys(obj).forEach(
+		function(current, index) {
+			console.log("obj: ", obj[current], " - ", index);
+		}
+	)
+
+
+Es 6 will have proper tail calls in than case i will use recursive funcs only
+old
+function repeat(func) { 
+    while ( func () !== undefined) { 
+    } 
+}
+
+new:
+function repeat(func) { 
+    if (func () !== undefined) { 
+        return repeat(func); 
+    } 
+} 
+35:40  -class free object oriented programming - 
+37:340 how to make object when es6 comes out
+	constructor is lower case because we don't need 'new'
+	spec is our specification object {}, better than a list of args
+	dont need to use this
+	our return statment es6 allows us to omit 'method:method'
+
+function constructor(spec) {
+	let {member} = spec,
+		{other} = other_constructor(spec),
+		method = function() {
+			// member, other, method
+		};
+
+	return Object.freeze({
+		method,
+		other
+	})
+}
+
+
+37:00 specification object - rather than passing in parameters
+
+-------------------------
+
+js compile steps
+garbage collection
+pass by reference or value?
+how to make async functions?
+modular javascript
+functional js

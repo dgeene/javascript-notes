@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+	<script>
+	var ssdpDev = {uID: 'xf3dv45', ip: '192.168.1.4'};
+
+	function devConstructor(newDev) {
+	let {uID} = newDev,
+		{ip} = newDev,
+		method = function() {
+			// member, other, method
+			foobar();
+			console.log('called method. ip is: ', ip);
+		};
+
+	function foobar() {
+		console.log('foobar')
+	}
+	return Object.freeze({
+		method,
+		ip
+	})
+	}
+
+	var dev = devConstructor(ssdpDev);
+	</script>
+	
+</body>
+</html>
